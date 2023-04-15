@@ -12,6 +12,8 @@ import Home from './components/Home';
 import PizzStoreAPIApi from './Serivce/index.api';
 import AllItems from './components/Home/AllItems';
 import CartComponent from './components/CartPage';
+import LoginPageComponent from './components/LoginPage';
+import ProctetedRoute from './components/ProtectedRoute';
 
 function App() {
  const PizzaListStore = new UserPizzaDetailsStore(new PizzStoreAPIApi())
@@ -22,9 +24,10 @@ function App() {
     <Provider pizzaStore={PizzaListStore}>
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={Home}></Route>
-        <Route exact path='/menu' component={AllItems}></Route>
-        <Route exact path='/cart' component={CartComponent}></Route>
+        <ProctetedRoute exact path="/" component={Home}></ProctetedRoute>
+        <Route exact path = '/login' component={LoginPageComponent}></Route>
+        <ProctetedRoute exact path='/menu' component={AllItems}></ProctetedRoute>
+        <ProctetedRoute exact path='/cart' component={CartComponent}></ProctetedRoute>
       </Switch>
 
     </BrowserRouter>

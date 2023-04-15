@@ -10,6 +10,7 @@
     "@types/node": "^16.18.23",
     "@types/react": "^18.0.35",
     "@types/react-dom": "^18.0.11",
+    "js-cookie": "^3.0.1",
     "mobx": "^5.15.0",
     "mobx-react": "6.1.4",
     "react": "^18.2.0",
@@ -47,6 +48,7 @@
     ]
   },
   "devDependencies": {
+    "@types/js-cookie": "^3.0.3",
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.26"
   }

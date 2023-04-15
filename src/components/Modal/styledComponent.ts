@@ -23,7 +23,7 @@ border-radius: 15px;
 export const ModalText = styled.h3``
 
 export const ModalCloseButton = styled.button`
-background-color: blue;
+background-color: blueviolet;
 color: white;
 border-radius: 8px;
 padding: 8px 12px;

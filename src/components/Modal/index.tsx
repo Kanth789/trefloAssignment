@@ -16,16 +16,17 @@ const Logout = 'LogOut'
 
 interface Props {
     onClickCloseOrCancel : VoidFunction
+    OnClickOnLogotInModal:VoidFunction
 }
 const ModalComponent = (props:Props) => {
-    const{onClickCloseOrCancel} = props
+    const{onClickCloseOrCancel,OnClickOnLogotInModal} = props
    
   return (
     <><ModalMainContainer></ModalMainContainer><ModalTextContainer>
           <ModalText>{Text}</ModalText>
           <ModalButton>
               <ModalCancelButton onClick={onClickCloseOrCancel}>{Cancel}</ModalCancelButton>
-              <ModalCloseButton onClick={onClickCloseOrCancel}>{Logout}</ModalCloseButton>
+              <ModalCloseButton onClick={OnClickOnLogotInModal}>{Logout}</ModalCloseButton>
           </ModalButton>
       </ModalTextContainer></>
     

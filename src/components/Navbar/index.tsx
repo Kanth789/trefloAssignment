@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 import { CompanyTitle, Pizza } from "../Home/constant"
 import { CompanyChildName, Navitems, Navitem, CompanyName, Logo, NarbarContainer, NavbarLogoAndItem, Navbar, CartCountWrapper, CartCount } from "./styledComponent"
 import ModalComponent from "../Modal"
@@ -6,12 +6,18 @@ import { useState } from "react"
 
 const NavbarComponent = (props:any) => {
     const {shouldShowChangeColor,cartCount= 0} = props
+    const history = useHistory()
     const[shouldShow,setShouldModal] = useState(false)
     const onClickLogOut = () => {
       setShouldModal(true)
     }
     const onClickCloseOrCancel = () =>{
       setShouldModal(false)
+      
+    }
+    const OnClickOnLogotInModal = ()=>{
+      setShouldModal(false)
+      history.push('/login')
     }
     return(
         <Navbar shouldShowChangeColor={shouldShowChangeColor}>
@@ -26,7 +32,7 @@ const NavbarComponent = (props:any) => {
             <Link to={"/menu"} style={{ textDecoration: 'none', color:'black' }}><Navitem>{"Menu"}</Navitem></Link>
             <Link to={"/cart"} style={{ textDecoration: 'none', color:'black'}}><CartCount><Navitem>{"Cart"}</Navitem><CartCountWrapper>{cartCount}</CartCountWrapper></CartCount></Link>
             <Navitem onClick={onClickLogOut}>{"Logout"}</Navitem>
-            {shouldShow ? <ModalComponent onClickCloseOrCancel={onClickCloseOrCancel}/> : null}
+            {shouldShow ? <ModalComponent onClickCloseOrCancel={onClickCloseOrCancel} OnClickOnLogotInModal={OnClickOnLogotInModal}/> : null}
           </Navitems>
         </NarbarContainer>
         </NavbarLogoAndItem>

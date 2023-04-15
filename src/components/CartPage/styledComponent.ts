@@ -7,8 +7,10 @@ margin-top: 80px;
 
 export const CartSingleCard = styled.div`
 display: grid;
-grid-template-columns: repeat(5, 267px);
+grid-template-columns: repeat(4, 267px) 100px;
 grid-column-gap: 20px;
+border: 1px solid ridge;
+border-radius: 15px;
 
 
 `
@@ -60,7 +62,7 @@ margin-right: auto;
 
 export const CardHeadlineContainer = styled.div`
 display: grid;
-grid-template-columns: repeat(5, 267px);
+grid-template-columns: repeat(4, 267px) 100px;
 grid-column-gap: 20px;
 `
 
